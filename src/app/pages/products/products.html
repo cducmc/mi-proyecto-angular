@@ -1,0 +1,278 @@
+<!--
+  PÁGINA DE PRODUCTOS (PRODUCTS)
+  Catálogo completo de equipos de cómputo con todas las imágenes disponibles
+-->
+<div class="products-container">
+  <!-- SECCIÓN HERO DE PRODUCTOS -->
+  <section class="products-hero">
+    <div class="hero-content">
+      <h1>Nuestros Productos</h1>
+      <img src="/imagenes/computador1.jpg" alt="Catálogo de equipos de cómputo" class="products-hero-image">
+      <p class="hero-subtitle">
+        Descubre nuestra amplia gama de equipos de cómputo, laptops y accesorios de las mejores marcas
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTROS DE CATEGORÍAS -->
+  <section class="filters-section">
+    <h2>Filtrar por Categoría</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">Todos</button>
+      <button class="filter-btn" data-category="desktop">Equipos de Escritorio</button>
+      <button class="filter-btn" data-category="laptop">Laptops</button>
+      <button class="filter-btn" data-category="gaming">Gaming</button>
+      <button class="filter-btn" data-category="professional">Profesionales</button>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE PRODUCTOS -->
+  <section class="products-catalog">
+    <div class="products-grid">
+
+      <!-- PRODUCTO 1 - EQUIPO GAMING -->
+      <div class="product-card" data-category="gaming desktop">
+        <div class="product-image-container">
+          <img src="/imagenes/computador7.jpg" alt="PC Gaming Extreme" class="product-image">
+          <div class="product-badge">Gaming</div>
+        </div>
+        <div class="product-info">
+          <h3>PC Gaming Extreme</h3>
+          <p class="product-description">Equipo gaming de alto rendimiento con RTX 4080, ideal para juegos en 4K</p>
+          <div class="product-specs">
+            <span>• RTX 4080 Super</span>
+            <span>• Intel i7-13700K</span>
+            <span>• 32GB DDR5</span>
+            <span>• SSD 1TB NVMe</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$2,499.000</span>
+            <span class="price-original">$2,799.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'gaming-extreme',
+            name: 'PC Gaming Extreme',
+            price: 2499000,
+            image: '/imagenes/computador7.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 - LAPTOP PROFESIONAL -->
+      <div class="product-card" data-category="laptop professional">
+        <div class="product-image-container">
+          <img src="/imagenes/computador9.jpg" alt="Laptop Profesional Business" class="product-image">
+          <div class="product-badge">Profesional</div>
+        </div>
+        <div class="product-info">
+          <h3>Laptop Business Pro</h3>
+          <p class="product-description">Laptop profesional para trabajo empresarial con máxima portabilidad</p>
+          <div class="product-specs">
+            <span>• Intel i5-13500H</span>
+            <span>• 16GB RAM</span>
+            <span>• 512GB SSD</span>
+            <span>• 14" Full HD</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$1,299.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'laptop-business',
+            name: 'Laptop Business Pro',
+            price: 1299000,
+            image: '/imagenes/computador9.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 3 - EQUIPO ESCRITORIO -->
+      <div class="product-card" data-category="desktop professional">
+        <div class="product-image-container">
+          <img src="/imagenes/computador10.jpg" alt="PC Escritorio Profesional" class="product-image">
+          <div class="product-badge">Escritorio</div>
+        </div>
+        <div class="product-info">
+          <h3>PC Office Master</h3>
+          <p class="product-description">Equipo de escritorio optimizado para productividad y trabajo de oficina</p>
+          <div class="product-specs">
+            <span>• Intel i5-12400</span>
+            <span>• 16GB DDR4</span>
+            <span>• 500GB SSD</span>
+            <span>• Monitor 24" HD</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$899.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'pc-office',
+            name: 'PC Office Master',
+            price: 899000,
+            image: '/imagenes/computador10.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4 - LAPTOP GAMING -->
+      <div class="product-card" data-category="laptop gaming">
+        <div class="product-image-container">
+          <img src="/imagenes/computador2.jpg" alt="Laptop Gaming ROG" class="product-image">
+          <div class="product-badge">Gaming</div>
+        </div>
+        <div class="product-info">
+          <h3>Laptop Gaming ROG</h3>
+          <p class="product-description">Potente laptop gaming con pantalla 144Hz para experiencias inmersivas</p>
+          <div class="product-specs">
+            <span>• RTX 4070 Mobile</span>
+            <span>• AMD Ryzen 7</span>
+            <span>• 32GB DDR5</span>
+            <span>• 15.6" 144Hz</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$1,999.000</span>
+            <span class="price-original">$2,299.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'laptop-gaming',
+            name: 'Laptop Gaming ROG',
+            price: 1999000,
+            image: '/imagenes/computador2.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 5 - WORKSTATION -->
+      <div class="product-card" data-category="desktop professional">
+        <div class="product-image-container">
+          <img src="/imagenes/computador3.jpg" alt="Workstation Profesional" class="product-image">
+          <div class="product-badge">Workstation</div>
+        </div>
+        <div class="product-info">
+          <h3>Workstation Pro Max</h3>
+          <p class="product-description">Estación de trabajo para diseño 3D, edición de video y desarrollo</p>
+          <div class="product-specs">
+            <span>• RTX 4090</span>
+            <span>• Intel Xeon W</span>
+            <span>• 64GB ECC RAM</span>
+            <span>• 2TB NVMe RAID</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$4,599.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'workstation-pro',
+            name: 'Workstation Pro Max',
+            price: 4599000,
+            image: '/imagenes/computador3.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 6 - ALL IN ONE -->
+      <div class="product-card" data-category="desktop professional">
+        <div class="product-image-container">
+          <img src="/imagenes/computador4.jpg" alt="PC All in One" class="product-image">
+          <div class="product-badge">All-in-One</div>
+        </div>
+        <div class="product-info">
+          <h3>PC All-in-One Elite</h3>
+          <p class="product-description">Computador todo-en-uno con diseño elegante y pantalla táctil 4K</p>
+          <div class="product-specs">
+            <span>• Intel i7-12700</span>
+            <span>• 16GB RAM</span>
+            <span>• 1TB SSD</span>
+            <span>• 27" 4K Touch</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$1,799.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'all-in-one',
+            name: 'PC All-in-One Elite',
+            price: 1799000,
+            image: '/imagenes/computador4.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 7 - LAPTOP ULTRABOOK -->
+      <div class="product-card" data-category="laptop professional">
+        <div class="product-image-container">
+          <img src="/imagenes/computador5.jpg" alt="Ultrabook Premium" class="product-image">
+          <div class="product-badge">Ultrabook</div>
+        </div>
+        <div class="product-info">
+          <h3>Ultrabook Premium</h3>
+          <p class="product-description">Laptop ultra-delgada con batería de larga duración y diseño premium</p>
+          <div class="product-specs">
+            <span>• Intel i7-1355U</span>
+            <span>• 16GB LPDDR5</span>
+            <span>• 1TB SSD</span>
+            <span>• 13.3" OLED</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$1,599.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'ultrabook-premium',
+            name: 'Ultrabook Premium',
+            price: 1599000,
+            image: '/imagenes/computador5.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 8 - GAMING DESKTOP RGB -->
+      <div class="product-card" data-category="gaming desktop">
+        <div class="product-image-container">
+          <img src="/imagenes/computador6.jpg" alt="PC Gaming RGB" class="product-image">
+          <div class="product-badge">RGB Gaming</div>
+        </div>
+        <div class="product-info">
+          <h3>PC Gaming RGB Master</h3>
+          <p class="product-description">Equipo gaming con iluminación RGB personalizable y cooling avanzado</p>
+          <div class="product-specs">
+            <span>• RTX 4070 Ti</span>
+            <span>• AMD Ryzen 9</span>
+            <span>• 32GB DDR5</span>
+            <span>• RGB Sync</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">$2,199.000</span>
+          </div>
+          <button class="btn-add-cart" (click)="addToCart({
+            id: 'gaming-rgb',
+            name: 'PC Gaming RGB Master',
+            price: 2199000,
+            image: '/imagenes/computador6.jpg'
+          })">Agregar al Carrito</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE OFERTAS ESPECIALES -->
+  <section class="special-offers">
+    <h2>🔥 Ofertas Especiales</h2>
+    <div class="offers-grid">
+      <div class="offer-card">
+        <img src="/imagenes/computador8.jpg" alt="Oferta del mes" class="offer-image">
+        <div class="offer-content">
+          <h3>¡Oferta del Mes!</h3>
+          <p>Hasta 25% de descuento en equipos gaming seleccionados</p>
+          <span class="offer-badge">-25%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="products-cta">
+    <h2>¿No encuentras lo que buscas?</h2>
+    <p>Contáctanos para cotizaciones personalizadas y ensambles a medida</p>
+    <div class="cta-buttons">
+      <a routerLink="/contacto" class="btn btn-primary">Contactar Ahora</a>
+      <a routerLink="/nosotros" class="btn btn-secondary">Sobre Nosotros</a>
+    </div>
+  </section>
+</div>

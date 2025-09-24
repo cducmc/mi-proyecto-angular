@@ -1,0 +1,34 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>Bienvenido a Computers</h1>
+    <!--
+      IMAGEN CORREGIDA PARA ANGULAR 17+ CON PUBLIC:
+      - En Angular 17+, la carpeta public/ SÍ funciona
+      - PERO la ruta es "/imagenes/nombre.jpg" NO "/public/imagenes/"
+      - Angular sirve public/ directamente desde la raíz
+    -->
+    <img src="/imagenes/computador8.jpg" alt="Imagen de Computadora" class="hero-image">
+    <p class="hero-description">
+      Tu tienda especializada en equipos de cómputo y tecnología de última generación.
+    </p>
+    <div class="hero-buttons">
+      <a routerLink="/productos" class="btn btn-primary">Ver Productos</a>
+      <a routerLink="/nosotros" class="btn btn-secondary">Sobre Nosotros</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>💻 Equipos de Alta Gama</h3>
+      <p>Computadoras y laptops de las mejores marcas</p>
+    </div>
+    <div class="feature">
+      <h3>🛠️ Soporte Técnico</h3>
+      <p>Servicio técnico especializado y garantía</p>
+    </div>
+    <div class="feature">
+      <h3>🚚 Envío Gratis</h3>
+      <p>Envío gratuito en compras mayores a $500</p>
+    </div>
+  </div>
+</div>

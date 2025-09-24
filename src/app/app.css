@@ -1,0 +1,67 @@
+/*
+  ESTILOS DEL COMPONENTE PRINCIPAL DE LA APLICACIÓN
+  Define el layout general y animaciones para toda la app
+*/
+
+/*
+  LAYOUT PRINCIPAL
+  :host se refiere al elemento contenedor del componente (app-root)
+*/
+:host {
+  /* Flexbox: Organiza los elementos (header, main, footer) verticalmente */
+  display: flex;
+  flex-direction: column;
+
+  /* min-height: 100vh asegura que la app ocupe toda la altura de la pantalla */
+  /* vh = viewport height (altura de la ventana del navegador) */
+  min-height: 100vh;
+}
+
+/*
+  ESTILOS DEL CONTENIDO PRINCIPAL
+  Área donde se muestran las páginas (entre header y footer)
+*/
+main {
+  /* flex: 1 hace que main ocupe todo el espacio disponible */
+  /* Esto empuja el footer hacia abajo */
+  flex: 1;
+
+  /* Espaciado interno para que el contenido no toque los bordes */
+  padding: 2rem;
+
+  /* Ancho máximo para evitar líneas de texto muy largas en pantallas grandes */
+  max-width: 1200px;
+
+  /* Centra el contenido horizontalmente */
+  margin: 0 auto;
+
+  /* Asegura que ocupe todo el ancho disponible hasta el máximo */
+  width: 100%;
+}
+
+/*
+  ANIMACIÓN PARA CAMBIO DE PÁGINAS
+  router-outlet + * selecciona el componente que se renderiza después del router-outlet
+*/
+router-outlet + * {
+  /* Aplica la animación fadeIn durante 0.3 segundos con transición suave */
+  animation: fadeIn 0.3s ease-in;
+}
+
+/*
+  DEFINICIÓN DE LA ANIMACIÓN FADEIN
+  Crea un efecto de aparición suave cuando cambia de página
+*/
+@keyframes fadeIn {
+  /* Estado inicial: invisible y ligeramente desplazado hacia abajo */
+  from {
+    opacity: 0;                    /* Completamente transparente */
+    transform: translateY(10px);   /* 10px hacia abajo */
+  }
+
+  /* Estado final: completamente visible y en posición normal */
+  to {
+    opacity: 1;                    /* Completamente opaco */
+    transform: translateY(0);      /* En su posición original */
+  }
+}

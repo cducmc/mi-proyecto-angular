@@ -1,0 +1,71 @@
+
+<!--
+  HEADER CON CARRITO DE COMPRAS FUNCIONAL EN TYPESCRIPT
+  Navbar responsivo con logo, navegación y carrito integrado
+-->
+<header>
+  <nav>
+    <!-- LOGO DE LA EMPRESA -->
+    <div class="logo">
+      <a routerLink="/">
+        <span class="logo-text">💻 Computers</span>
+      </a>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <div class="nav-links">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/nosotros">Nosotros</a>
+      <a routerLink="/productos">Productos</a>
+      <a routerLink="/contacto">Contacto</a>
+    </div>
+
+    <!-- CARRITO DE COMPRAS -->
+    <div class="cart-container">
+      <button class="cart-button" (click)="toggleCart()">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-text">Carrito</span>
+        <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
+      </button>
+
+      <!-- DROPDOWN DEL CARRITO -->
+      <div class="cart-dropdown" [class.show]="isCartOpen" (clickOutside)="closeCart()">
+        <div class="cart-header">
+          <h3>🛒 Mi Carrito</h3>
+        </div>
+
+        <div class="cart-items">
+          <!-- CARRITO VACÍO -->
+          <div class="empty-cart" *ngIf="cartItems.length === 0">
+            <p>Tu carrito está vacío</p>
+            <span class="empty-cart-icon">🛍️</span>
+          </div>
+
+          <!-- ITEMS DEL CARRITO -->
+          <div class="cart-item" *ngFor="let item of cartItems">
+            <img [src]="item.image" [alt]="item.name" class="cart-item-image">
+            <div class="cart-item-details">
+              <div class="cart-item-name">{{ item.name }}</div>
+              <div class="cart-item-price">${{ formatPrice(item.price) }}</div>
+              <div class="cart-item-quantity">
+                <button class="quantity-btn" (click)="decreaseQuantity(item.id)">-</button>
+                <span class="quantity-display">{{ item.quantity }}</span>
+                <button class="quantity-btn" (click)="increaseQuantity(item.id)">+</button>
+                <button class="remove-item" (click)="removeFromCart(item.id)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-footer" *ngIf="cartItems.length > 0">
+          <div class="cart-total">
+            <strong>Total: ${{ formatPrice(cartTotal) }}</strong>
+          </div>
+          <button class="checkout-btn" (click)="proceedToCheckout()">
+            Proceder al Pago
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
